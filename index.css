@@ -1,0 +1,239 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    width: 100vw;
+    box-sizing: border-box;
+    background-color: #f4f6ff;
+    height: 100vh;
+}
+header{
+    width: 100%;
+    height: 80px;
+}
+header .nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: auto;
+    height: 80px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.logo{
+    font-weight: 800;
+    font-style: italic;
+    font-size: 38px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+ul{
+    display: flex;
+}
+ul li{
+    list-style: none;
+}
+ul li a{
+    display: inline-block;
+    padding: 10px 20px;
+    position: relative;
+    transition: all 0.7s ease;
+    text-decoration: none;
+    font-family: 'Outfit', sans-serif;
+    color: #373336;
+    font-size: 15px;
+    opacity: 0.7;
+    font-weight: 400;
+}
+ul li a:hover, ul li a.active{
+    opacity: 1;
+}
+ul li a:after{
+    content: '';
+    position: absolute;
+    border-radius: 50px;
+    bottom: 10%;
+    left: 10%;
+    height: 3px;
+    max-width: 80%;
+    width: 0;
+    background-color: #e87551;
+    transition: all 0.7s ease;
+}
+ul li a:hover::after{
+    width: 100%;
+}
+ul li:hover a, ul li.active{
+    opacity: 1;
+}
+header .nav ul button{
+    padding: 10px 25px;
+    border: none;
+    background-color: #373336;
+    font-family: 'Outfit', sans-serif;
+    color: white;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-left: 15vw;
+}
+main{
+    overflow: hidden;
+    position: relative;
+}
+main .container{
+    height: calc(100vh-80px);
+    width: 100%;
+    max-width: 1200px;
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    grid-template-rows: 1fr;
+    column-gap: 3rem;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+main .container .hero{
+    font-family: 'outfit', sans-serif;
+    order: 0;
+}
+main .container .hero h1{
+    font-size: 70px;
+    line-height: 1.2;
+    font-weight: 800;
+    color: #373336;
+    margin-bottom: 35px;
+    letter-spacing: 3.2px;
+}
+main .container .hero h1 span{
+    color: #e87551;
+}
+main .container .hero p{
+    font-size: 16px;
+    line-height: 26px;
+    color: #a7acc3;
+    margin-bottom: 38px;
+    letter-spacing: 0.7px;
+}
+.heroPic{
+    position: relative;
+    overflow: hidden;
+}
+.size{
+    width: 620px;
+    height: 550px;
+    top: 0;left: 0;
+    position: absolute;
+    opacity: 0.3;
+    animation: move 2.5s linear infinite;   
+}
+.img{
+    width: 600px;height: auto;
+}
+.flex{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: last baseline;
+    height: 80px;
+    padding-left: 5px;
+}
+button{
+    width: 150px;
+    height: 45px;
+    border-radius: 25px;
+    border: 1px #373336 solid;
+    font-weight: 700;
+    cursor: pointer;
+}
+.fill{
+    background-color: #e87551;
+    border: none;
+    color: white;
+    margin-right: 15px;
+}
+@keyframes move{
+    0%{
+        transform: translate(-15px, 0px);
+    }
+    50%{
+        transform: translate(0px, -15px);
+    }
+    100%{
+        transform: translate(-15px, 0px);
+    }
+}
+@media (max-width: 1150px){
+    .heroPic{
+        margin-top: 23px;
+    }
+    .img{
+        width: 500px;
+    }
+    .size{
+        width: 520px;
+    }
+    main .container .hero h1{
+        font-size: 63px;
+        line-height: 1;
+    }
+    main .container{
+        column-gap: 2rem;
+    }
+}
+@media (max-width: 978px){
+    main .container{
+        column-gap: 0.5rem;
+    }
+    main .container .hero h1{
+        font-size: 50px;
+        padding-left: 5px;
+    }
+    main .container .hero p{
+        padding-left: 10px;
+    }
+}
+@media (max-width: 888px){
+    main .container{
+        grid-template-columns: 1fr;
+        grid-template-rows: 2fr;
+        row-gap: 25px;
+    }
+    main .container .hero{
+        width: 90vw;
+        padding-top: 25px;
+        margin: auto;
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .flex{
+        width: 45vw;
+        justify-content: space-between;
+    }
+    main .container .hero h1{
+        font-size: 67px;
+    }
+    .heroPic{
+        width: 90vw;
+        margin: auto;
+    }
+    .img{
+        width: 100%;
+    }
+    .size{
+        width: 100%;
+        height: 600px;
+    }
+    header{
+        height: 110px;
+        margin: 10px 0;
+    }
+    header .nav{
+        height: 110px;
+        flex-direction: column;
+    }
+    header .nav ul button{
+        margin-left: 8vw;
+    }
+}
